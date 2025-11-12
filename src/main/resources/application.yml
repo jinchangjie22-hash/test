@@ -1,0 +1,23 @@
+spring:
+  datasource:
+    url: jdbc:mysql://localhost:3306/order_sync?useSSL=false&useUnicode=true&characterEncoding=utf8&serverTimezone=Asia/Shanghai
+    username: root
+    password: password
+    driver-class-name: com.mysql.cj.jdbc.Driver
+  jackson:
+    default-property-inclusion: non_null
+
+mybatis-plus:
+  mapper-locations: classpath*:mapper/*.xml
+  configuration:
+    map-underscore-to-camel-case: true
+
+ordersync:
+  openapi:
+    base-url: https://openapi.example.com
+    order-list-path: /orders/list
+    app-key: your-app-key
+    app-secret: your-app-secret
+    common-params:
+      format: json
+      version: "1.0"
